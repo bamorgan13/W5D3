@@ -75,16 +75,10 @@ def bsearch(array, target)
 
     if target > array[index]
         new_index = bsearch(array[index + 1..-1], target)
-        if new_index == nil
-            return nil
-        else
-            result = index + 1 + new_index
-        end
+        new_index.nil? ? nil : (index + 1 + new_index)
     else
-        result = bsearch(array[0...index], target)
+        bsearch(array[0...index], target)
     end
-    
-    result
 end
 
 def merge_sort(array)
